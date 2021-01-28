@@ -1,0 +1,125 @@
+.about {
+    &__wrapper {
+        display: flex;
+        height: 650px;
+    }
+
+    &__descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 35%;
+    }
+
+    &__img {
+        flex: 0 0 65%;
+        position: relative;
+        min-height: 200px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.main {
+    &__header {
+        font-weight: bold;
+        font-size: 72px;
+        line-height: 68px;
+        color: #000000;
+        margin-bottom: 16px;
+        margin-top: 0;
+    }
+    &__subheader {
+        margin-bottom: $margin-small;
+        max-width: 380px;
+        padding: 0 5px 0;
+    }
+    &__descr {
+        max-width: 380px;
+        padding: 0 5px 0;
+    }
+}
+
+//  @MEDIA  
+
+@media (max-width: 1024px) {
+    .about {
+        &__wrapper {
+            height: 500px;
+        }
+    }
+    .main {
+        &__header {
+            font-size: 48px;
+            line-height: 42px;
+            margin-bottom: $margin-medium;
+        }
+        &__subheader {
+            margin-bottom: 0;
+        }
+        &__descr {
+            margin: $margin-small 0 $margin-medium;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        &__wrapper {
+            display: flex; 
+            flex-direction: column-reverse;
+            height: auto;
+        }
+        &__descr {
+            max-width: 500px;
+            margin-top: 40px;
+            width: 100%;
+        }
+        &__img {
+			min-height: 350px;
+			margin: 0 -15px;
+        }
+    }
+    .main {
+        &__header {
+            font-size: 36px;
+            line-height: 34px;
+        }
+        &__subheader {
+            max-width: 100%;
+        }
+        &__descr {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 525px) {
+	.about {
+		&__img {
+			min-height: 300px;
+		}
+	}
+	.main {
+		&__header {
+			margin-bottom: 11px;
+			margin-top: 0;
+			width: 175px;
+		}
+		&__subheader {
+			font-size: 14px;
+			line-height: 17px;
+		}
+		&__descr {
+			max-width: 300px;
+			padding: 0 5px 0;
+		}
+	}
+}

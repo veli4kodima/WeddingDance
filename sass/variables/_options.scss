@@ -1,0 +1,85 @@
+body {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+	font-weight: normal;
+	&.open {
+		overflow: hidden;
+	}
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn {
+    width: 160px;
+    border: 2px solid $main-color;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 16px;
+    color: $main-color;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    cursor: pointer;
+    &:hover {
+        background-color: $main-color;
+        color: #fff;
+    }
+}
+
+.section {
+    &__header {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 34px;
+        color: #000000;
+        margin-top: 100px;
+    }
+    &__subheader {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+    }
+    &__descr {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 25px;
+        max-width: 680px;
+        margin:  24px 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        &__header {
+            font-size: 24px;
+            line-height: 23px;
+            margin-top: 55px;
+        }
+        &__subheader {
+            font-size: 14px;
+            line-height: 17px;
+        }
+        &__descr {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 21px;
+            margin:  11px 0 18px;
+        }
+    }
+}
+
+@media (max-width: 525px) {
+	.section {
+        &__descr {
+			max-width: 320px;
+        }
+    }
+}

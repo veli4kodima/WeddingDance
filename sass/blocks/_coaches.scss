@@ -1,0 +1,127 @@
+.coaches {
+    padding-bottom: 100px;
+    &__slider {
+        padding-bottom: 60px;
+    }
+    &__item {
+        display: flex;
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        box-sizing: border-box;
+        box-shadow: 0px 4px 30px rgba(207, 207, 207, 0.25);
+        border-radius: 2px;
+        &--img {
+            // width: 45%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+        &--descr {
+            width: 55%;
+            padding: 34px 30px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .item {
+        color: #000000;
+        line-height: 25px;
+        font-size: 16px;
+        &__number {
+            font-weight: bold;
+        }
+        &__name {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 23px;
+            margin-top: 8px;
+        }
+        &__position {
+            margin-top: 8px;
+        }
+        &__about {
+            margin-top: $margin-medium;
+            li {
+                color: rgba($color: #000000, $alpha: .5);
+                margin-bottom: $margin-small;
+                span {
+                    color: rgba($color: #000000, $alpha: 1);
+                }
+                &:nth-last-child(1) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__btn {
+            margin-top: auto;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .coaches__item--descr {
+        padding: 15px 10px;
+    }
+    .coaches .coaches__slider .swiper-pagination-fraction {
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .coaches {
+        padding-bottom: 50px;
+        &__slider {
+            padding-bottom: 30px;
+        }
+        &__item {
+            display: flex;
+            flex-direction: column;
+            max-width: 285px;
+            &--img {
+                width: 100%;
+				max-width: 100%;
+				max-height: 285px;
+                object-fit: cover;
+            }
+            &--descr {
+                max-width: 100%;
+                padding: 16px;
+            }
+		}
+		.item {
+			&__number {
+				font-size: 12px;
+				font-weight: bold;
+			}
+			&__name {
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 17px;
+				margin-top: 9px;
+			}
+			&__position {
+				font-size: 13px;
+				line-height: 20px;
+				margin-top: 4px;
+			}
+			&__about {
+				margin-top: $margin-small;
+				font-size: 13px;
+				line-height: 20px;
+				li {
+					margin-bottom: 8px;
+					span {
+						display: block;
+					}
+					&:nth-last-child(1) {
+						margin-bottom: 0;
+					}
+				}
+			}
+			&__btn {
+				margin-top: auto;
+				display: none;
+			}
+		}
+    }
+}

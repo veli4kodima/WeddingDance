@@ -1,0 +1,196 @@
+.header {
+    padding: 18px 0;
+    .container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.logo {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.nav {
+    margin-left: auto;
+    &__header {
+        display: none;
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+    &__item {
+        margin-right: 16px;
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+        &:nth-last-child(1) {
+            margin-right: 0;
+        }
+        a {
+            padding: 6px 4px 2px;
+            font-size: 14px;
+            line-height: 16px;
+            text-decoration: none;
+            color: $text-color;
+            &:hover {
+                border-bottom: 1px solid #060606;
+            }
+        }
+	}
+	&__text {
+		display: none;
+	}
+}
+
+.header__btn {
+    border: 2px solid $text-color;
+    width: 115px;
+    color: $text-color;
+    padding: 5px 0;
+    margin-left: 31px;
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.burger {
+    &__menu {
+        display: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        margin-left: auto;
+    }
+    &__line {
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .nav__item {
+        margin-right: 12px;
+    }
+    .header__btn {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+		padding: 7px 0;
+		width: 100%;
+		position: fixed;
+		background-color: #fff;
+		z-index: 5;
+    }
+    .header__btn {
+        display: block;
+        margin: 16px 0 0;
+    }
+    .nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: -400px;
+        bottom: 0;
+        z-index: 3;
+        background-color: #fff;
+        transition: all .7s ease;
+        width: 375px;
+        &.open {
+            left: 0;
+			transition: all .7s ease;
+        }
+        &__list {
+            padding: 65px 24px 0;
+            flex-direction: column;
+            align-items: start;
+        }
+        &__item {
+            margin-bottom: 40px;
+            a {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 23px;
+            }
+        }
+        &__header {
+            display: block;
+            &:hover a {
+                border: none;
+            }
+            a {
+                font-size: 36px;
+                line-height: 34px;
+            }
+            margin-bottom: 50px;
+        }
+        &__text {
+			display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: bold;
+            font-size: 200px;
+            color: #FEF2F6;
+            transform: rotate(90deg) translate(32%, 8%);
+        }
+    }
+    .burger__menu {
+        display: flex;
+        transition: all 1s ease;
+        z-index: 4;
+        .burger__line:nth-child(1) {
+            transform: rotate(0);
+            transition: all .5s ease;
+        }
+        .burger__line:nth-child(2) {
+            display: block;
+            transition: all 1s ease;
+        }
+        .burger__line:nth-child(3) {
+            transform: rotate(0);
+            transition: all .5s ease;
+        }
+        &.open {
+            .burger__line:nth-child(1) {
+                transform: rotate(-45deg);
+                transition: all .4s ease;
+            }
+            .burger__line:nth-child(2) {
+                display: none;
+            }
+            .burger__line:nth-child(3) {
+                transform: rotate(45deg);
+                transition: all .4s ease;
+                margin-top: -15px;
+			}
+        }
+    }    
+}
+
+
+@media (max-width: 525px) {
+	.logo {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 375px) {
+    .nav {
+        width: 320px;
+        &__text {
+            transform: rotate( 90deg) translate(32%,36%);
+            z-index: -1;                
+        }
+    }
+}
